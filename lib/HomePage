@@ -1,0 +1,252 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/SegundaPage.dart';
+
+//CÓDIGO FEITA PELA M. CATIELLY, CONTENDO OS CARDS QUE DÃO ACESSO AS TELAS SECUNDÁRIAS.
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF058389),
+      appBar: AppBar(
+          title: const Text('pesquisar...'),
+          backgroundColor: const Color(0xFFD9D9D9),
+          leading: IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () {},
+        )),
+      
+      body: builBody(),
+    );
+  }
+
+  builBody() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+      child: ListView(
+        children: [
+             const SizedBox(height: 12),
+          buildImage2(
+              'lib/assets/images/card1.png'),
+            const SizedBox(height: 12),
+          buildImage3(
+              'lib/assets/images/card2.png'),
+            const SizedBox(height: 12),
+          buildImage4(
+              'lib/assets/images/card3.png'),
+            const SizedBox(height: 12),
+          buildImage5(
+              'lib/assets/images/card4.png'),
+            const SizedBox(height: 12),
+          buildImage6(
+              'lib/assets/images/card5.png'),
+         
+        ],
+      ),
+    );
+  }
+   buildImage2(String urlImage) {
+    return Stack(
+      children: [
+           
+        ClipRRect(
+         
+          child: Image.asset(
+          urlImage,
+          fit: BoxFit.cover,
+          height: 150,
+          width: 1100,
+         
+        ),
+        ),
+    
+        Container(
+          margin: const EdgeInsets.only(left: 160, top:3),
+  
+          child: const Text(
+            'UNIDADES MÉDICAS DE REDE PÚBLICA',
+            style: TextStyle(
+              color: Color(0xFF46707B),
+              fontSize: 21,
+              fontFamily: 'ChauPhilomeneOne',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          
+        ),
+         
+      ],
+    
+    );
+       /* Navigator.push(
+             context,
+              MaterialPageRoute(
+              builder: (context) {
+              return const SegundaPage();
+               },
+            ),
+          ),*/
+  }
+  
+  //0xFF46707B
+  
+   buildImage3(String urlImage) {
+    return Stack(
+      children: [
+           
+        ClipRRect(
+         
+          child: Image.asset(
+          urlImage,
+          fit: BoxFit.cover,
+          height: 150,
+          width: 1100,
+         
+        ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(right: 220, top: 15, left: 5),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 4,
+          ),
+        
+          child: const Text(
+            'UNIDADES MÉDICAS DE REDE PRIVADA',
+            style: TextStyle(
+              color: Color(0xFFFFFBF0),
+              fontSize: 22,
+              fontFamily: 'ChauPhilomeneOne',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+  buildImage4(String urlImage) {
+    return Stack(
+      children: [
+           
+        ClipRRect(
+         
+          child: Image.asset(
+          urlImage,
+          fit: BoxFit.cover,
+          height: 150,
+          width: 1100,
+         
+        ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 250, top: 40, right:  3),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 4,
+          ),
+        
+          child: const Text(
+            'UNIDADES FARMACÊUTICAS',
+            style: TextStyle(
+              color: Color(0xFF46707B),
+              fontSize: 24,
+              fontFamily: 'ChauPhilomeneOne',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+  buildImage5(String urlImage) {
+    return Stack(
+      children: [
+           
+        ClipRRect(
+         
+          child: Image.asset(
+          urlImage,
+          fit: BoxFit.cover,
+          height: 150,
+          width: 1100,
+         
+        ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(right: 210, top: 5, left:  3),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 4,
+          ),
+        
+          child: const Text(
+            'INSTITUIÇÕES ESPECIALIZADAS EM EXAMES CLÍNICOS',
+            style: TextStyle(
+              color: Color(0xFF46707B),
+              fontSize: 20,
+              fontFamily: 'ChauPhilomeneOne',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+  buildImage6(String urlImage) {
+    return Stack(
+      children: [
+           
+        ClipRRect(
+         
+          child: Image.asset(
+          urlImage,
+          fit: BoxFit.cover,
+          height: 150,
+          width: 1100,
+         
+        ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 190, top: 40, right:  3),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 4,
+          ),
+        
+          child: const Text(
+            'INSTRUÇÕES CONTRA COVID-19',
+            style: TextStyle(
+              color: Color(0xFFFFFBF0),
+              fontSize: 20,
+              fontFamily: 'ChauPhilomeneOne',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+  Text buildText({
+    required String text,
+    double fontSize = 14,
+    bool isBold = false,
+    Color color = Colors.black,
+  }) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: color,
+        fontSize: fontSize,
+       
+      ),
+    );
+  }
+}
+ 
